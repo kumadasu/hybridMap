@@ -106,8 +106,8 @@ private:
 private:
 	const wchar_t* WEB_URL_PREFIX_HTTP;
 
-	static const int AC_BUTTON_WEB_BACK = 3001;
-	static const int AC_BUTTON_WEB_FORWARD = 3002;
+	static const int AC_BUTTON_ZOOM_OUT = 3001;
+	static const int AC_BUTTON_ZOOM_IN  = 3002;
 
 	static const int AC_BUTTON_WEB_GOTO = 5001;
 	static const int AC_BUTTON_WEB_STOP = 5002;

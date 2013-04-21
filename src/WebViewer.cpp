@@ -159,11 +159,11 @@ WebViewer::CreateWebForm(void)
 	__pMainForm->SetFormBackEventListener(this);
 
 	//footer item
-	footerItem1.Construct(AC_BUTTON_WEB_BACK);
-	footerItem1.SetText(L"Back");
+	footerItem1.Construct(AC_BUTTON_ZOOM_OUT);
+	footerItem1.SetText(L"-");
 
-	footerItem2.Construct(AC_BUTTON_WEB_FORWARD);
-	footerItem2.SetText(L"Forward");
+	footerItem2.Construct(AC_BUTTON_ZOOM_IN);
+	footerItem2.SetText(L"+");
 
 	pFooter->AddItem(footerItem1);
 	pFooter->AddItem(footerItem2);
@@ -218,17 +218,15 @@ WebViewer::OnActionPerformed(const Control& source, int actionId)
 	String url;
 	switch (actionId)
 	{
-	case AC_BUTTON_WEB_BACK:
+	case AC_BUTTON_ZOOM_OUT:
 	{
 		__pWeb->EvaluateJavascriptN(L"map.setZoom(map.getZoom()-1);");
-		//__pWeb->GoBack();
 	}
 	break;
 
-	case AC_BUTTON_WEB_FORWARD:
+	case AC_BUTTON_ZOOM_IN:
 	{
 		__pWeb->EvaluateJavascriptN(L"map.setZoom(map.getZoom()+1);");
-		//__pWeb->GoForward();
 	}
 	break;
 
@@ -249,7 +247,6 @@ WebViewer::OnActionPerformed(const Control& source, int actionId)
 
 		url = App::GetInstance()->GetAppResourcePath() + L"Map.html";
 		__pWeb->LoadUrl( L"file://" + url);
-		//__pWeb->LoadUrl(GetValidUrl(url));
 		__pMainForm->RequestRedraw(true);
 	}
 	break;
