@@ -220,13 +220,15 @@ WebViewer::OnActionPerformed(const Control& source, int actionId)
 	{
 	case AC_BUTTON_WEB_BACK:
 	{
-		__pWeb->GoBack();
+		__pWeb->EvaluateJavascriptN(L"map.setZoom(map.getZoom()-1);");
+		//__pWeb->GoBack();
 	}
 	break;
 
 	case AC_BUTTON_WEB_FORWARD:
 	{
-		__pWeb->GoForward();
+		__pWeb->EvaluateJavascriptN(L"map.setZoom(map.getZoom()+1);");
+		//__pWeb->GoForward();
 	}
 	break;
 
