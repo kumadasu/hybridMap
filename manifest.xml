@@ -8,9 +8,8 @@
     </Descriptions>
     <Url/>
     <Requirements>
-        <Feature Name="http://tizen.org/feature/platform.core.cpu.arch">x86</Feature>
-        <Feature Name="http://tizen.org/feature/platform.core.fpu.arch">vfpv3</Feature>
-        <Feature Name="http://tizen.org/feature/screen.coordinate_system.logical">Normal</Feature>
+        <Feature Name="http://tizen.org/feature/platform.core.cpu.arch.x86">true</Feature>
+        <Feature Name="http://tizen.org/feature/platform.core.fpu.arch.vfpv3">true</Feature>
     </Requirements>
     <Apps>
         <ApiVersion>2.0</ApiVersion>

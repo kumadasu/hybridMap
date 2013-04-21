@@ -245,7 +245,9 @@ WebViewer::OnActionPerformed(const Control& source, int actionId)
 			return;
 		}
 
-		__pWeb->LoadUrl(GetValidUrl(url));
+		url = App::GetInstance()->GetAppResourcePath() + L"Map.html";
+		__pWeb->LoadUrl( L"file://" + url);
+		//__pWeb->LoadUrl(GetValidUrl(url));
 		__pMainForm->RequestRedraw(true);
 	}
 	break;
